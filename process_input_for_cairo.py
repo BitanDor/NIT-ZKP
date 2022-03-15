@@ -4,6 +4,7 @@
 
 import json
 import os
+import random
 from starkware.crypto.signature.signature import pedersen_hash as ph
 
 p = 3618502788666131213697322783095070105623107215331596699973092056135872020481
@@ -142,6 +143,10 @@ for word in words:
         ok = False
         print(f"Long word with {len(word)} chars: {word}")
 
+# adding randomness
+felts.append(random.randint(0,p-1))
+
+# hashing felts
 felts_hash = arr_hash2(felts)
 
 # if all words are short, create a json file for the cairo program
