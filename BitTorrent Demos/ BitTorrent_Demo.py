@@ -44,6 +44,7 @@ def hash_bytes(s):
 
 
 def ip2port(ip_string):
+    '''Generates pseudo-random virtual port for virtual user by its IP.'''
     number_strings = ip_string.split(".")
     nums = [int(e) for e in number_strings]
     return (7*nums[0] + 11*nums[1] + 13*nums[2] + 19*nums[3] +
