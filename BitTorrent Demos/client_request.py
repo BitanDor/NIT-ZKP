@@ -71,7 +71,6 @@ def to_felts(line):
                 types_with_breaks += char_type
                 line_with_breaks += chr(167)
                 line_with_breaks += char
-
     new_words = line_with_breaks.split(chr(167))
     for new_word in new_words:
         if new_word:
@@ -187,8 +186,8 @@ def main():
             '\t' + str(P) + '\t' + str(L) + '\t' + str(H) + '\n'
         file.write(new_line)
 
-    arr = to_felts(new_line)
-    update_log_hash(arr)
+    # arr = to_felts(new_line)
+    # update_log_hash(arr)
 
     return
 
