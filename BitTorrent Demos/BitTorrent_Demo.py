@@ -44,7 +44,6 @@ def hash_bytes(s):
 
 
 def ip2port(ip_string):
-    '''Generates pseudo-random virtual port for virtual user by its IP.'''
     number_strings = ip_string.split(".")
     nums = [int(e) for e in number_strings]
     return (7*nums[0] + 11*nums[1] + 13*nums[2] + 19*nums[3] +
@@ -182,7 +181,7 @@ def set_local_environment():
 
 def set_layout():
     '''the function returns the layout to be presented'''
-    lay = [[sg.Text("Wellcome to BitTorrent Demo", font=("Arial", 18))],
+    lay = [[sg.Text("Welcome to BitTorrent Demo", font=("Arial", 18))],
            [sg.Text("What movie would you like to download from the P2P network today?")],
            [sg.Input(key='INPUT', size=(50, 15)), sg.Button(
                "Search", key='SEARCH_BUTTON')],
@@ -255,7 +254,7 @@ client_dir = set_local_environment()
 # Set layout for main manue and display window
 sg.theme('Topanga')
 layout = set_layout()
-window = sg.Window(title="BT Demo - original", layout=layout,
+window = sg.Window(title="BT Demo - non-modified", layout=layout,
                    margins=(50, 50), size=(800, 600))
 
 # Program Mechanisem:
