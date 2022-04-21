@@ -194,6 +194,8 @@ func display_2gram{output_ptr0 : felt*}(w1 : felt*, w2 : felt*, c : felt*, l):
     return ()
 end
 
+
+# main instantiates some of the functions declared above. 
 func main{output_ptr : felt*}():
     alloc_locals
 
