@@ -8,10 +8,10 @@ This repository contains the materials used and tools developed working on the p
 **BitTorrent Demos** contains the relevant material for generating the virtual network for our toy demos, and the demos. 
 
 
-**Cairo text-processing tolls** contains the Cairo check-program that checks the main component of the source code for compliance with hardcoded black-list and white-list and hash check (and other checks).  It also contains Cairo tools for computing the bag-of-words of a text file. For more info on installing Cairo, writing and compiling Cairo programs, and generating and proving STARK proofs, see [this link](https://www.cairo-lang.org/).
+**Cairo text-processing tolls** contains the Cairo check-program that checks the main component of the source code for compliance with hardcoded black-list and white-list and hash check (and other checks).  It also contains Cairo tools for computing the bag-of-words of a text file. For more info on installing Cairo, writing and compiling Cairo programs, and generating and proving STARK proofs, see [here](https://www.cairo-lang.org/).
 
 
-**The initializer** contains our script that processes a text file into a cairo readable format. 
+**The initializer** contains a script that processes a text file into a cairo readable format. 
 
 
 **Wrapper auto generation** creates a python code for auto generation of the Cairo-check program from hard-coded black-list and white-list (and count-list). It also contains the template from which the check-program is built. 
@@ -19,8 +19,9 @@ This repository contains the materials used and tools developed working on the p
 
 **Legal Docs** contains a legal document mentioned in our paper. 
 
+
 ## Please note:
-Code references in our scripts are currently **local** and hence **have to be modified** by whoever tries to use them. 
+Some of the references that appear in our code are currently **local** and hence **have to be modified** by whoever tries to run them. 
 
 
 
