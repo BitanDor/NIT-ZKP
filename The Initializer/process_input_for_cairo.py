@@ -148,8 +148,8 @@ for word in words:
 felts.append(random.randint(0, p-1))
 
 felts_hash = arr_hash2(felts)
-
-# if all words are short, create a json file for the cairo program
+# Note: Cairo can process strings of up to 31 chars. 
+# If all words are short, create a json file for the cairo program
 if ok:
     out = loc + os.sep + file_name + "_input.json"
     mydict = {"X": felts}
