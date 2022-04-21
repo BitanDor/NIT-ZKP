@@ -1,5 +1,5 @@
 # the code cannot contain:
-# 1. the char chr(167) in lines that don't start with # either #, ''', or """
+# 1. the char chr(167) in lines that don't start with either #, ''', or """
 # 2. a line with a single character, not including indentation
 
 import json
@@ -7,7 +7,8 @@ import os
 import random
 from starkware.crypto.signature.signature import pedersen_hash as ph
 
-p = 3618502788666131213697322783095070105623107215331596699973092056135872020481
+# =3618502788666131213697322783095070105623107215331596699973092056135872020481
+p = pow(2, 251) + 17*pow(2, 192) + 1
 
 
 def arr_hash2(arr):
@@ -143,10 +144,9 @@ for word in words:
         ok = False
         print(f"Long word with {len(word)} chars: {word}")
 
-# adding randomness
-felts.append(random.randint(0,p-1))
+# adding randomness:
+felts.append(random.randint(0, p-1))
 
-# hashing felts
 felts_hash = arr_hash2(felts)
 
 # if all words are short, create a json file for the cairo program
