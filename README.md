@@ -3,7 +3,7 @@
 This repository contains the materials used and tools developed working on the paper **Using Zero-Knowledge to Reconcile Law Enforcement Secrecy and Fair Trial Rights in Criminal Cases** by _Dor Bitan, Ran Canetti, Shafi Goldwasser, and Rebecca Wexler_. [(link to pre-print version)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4074315).
 
 
-##Repository contents
+## Repository contents
 
 **BitTorrent Demos** contains the relevant material for generating the virtual network for our toy demos, and the demos. 
 
@@ -19,7 +19,7 @@ This repository contains the materials used and tools developed working on the p
 
 **Legal Docs** contains a legal document mentioned in our paper. 
 
-##Please note:
+## Please note:
 Code references in our scripts are currently **local** and hence **have to be modified** by whoever tries to use them. 
 
 
