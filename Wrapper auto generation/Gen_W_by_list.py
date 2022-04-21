@@ -1,13 +1,21 @@
 import json
 from datetime import datetime
 
+# This file auto-generates the check-program W from an empty template and the below hard-coded lists. 
 
-######   Here we define the strings that we want to check in the code
+######   These are the lists. 
+# We want to check that: 
+# Every element of the white-list appears in the code at least once, 
+# no element of the black-list appears in the code,
+# elements in the count-list appear in the code according to the specified quantity. 
+
+
+# The white-list
 appear_at_least_once = [
     'os.system(f"python client_request.py {param_string}")']
     # "download_n_display_summary("
 
-
+# The black-list
 do_not_appear = [
     "socket"]
     # "import socket", 
@@ -22,11 +30,13 @@ do_not_appear = [
     # "ssl", 
     # "socketserver"
 
-
+# The count_list
 appear_exact= [
     ("import", 7)
     ]
 
+
+# Some useful functions
 def key_for_val(val):
     '''val is an integer indicating the ord(.) of a char'''
     '''the function returns the type of the char as a char between 0-4'''
@@ -118,8 +128,8 @@ with open("wrapper_template.cairo","r") as f:
 for line in lines[:60]:
     cairo_wrapper += line
 
-# now we hard-code the strings we look for 
-# we begin with appear_at_least_once
+# now we hard-code the lists.
+# we begin with the white-list
 for i, phrase in enumerate(appear_at_least_once):
     phrase_list = phrase_to_list(phrase)
     l = len(phrase_list)
@@ -129,7 +139,7 @@ for i, phrase in enumerate(appear_at_least_once):
         cairo_wrapper += f"    assert [ARR_once{i} + {j}] = '{word}'\n"
     cairo_wrapper += "\n"
 
-# now those that don't appear
+# now the black-list
 for i, phrase in enumerate(do_not_appear):
     phrase_list = phrase_to_list(phrase)
     l = len(phrase_list)
@@ -139,7 +149,7 @@ for i, phrase in enumerate(do_not_appear):
         cairo_wrapper += f"    assert [ARR_none{i} + {j}] = '{word}'\n"
     cairo_wrapper += "\n"
 
-# now those that appear several times
+# now the count list
 for i, phrase in enumerate(appear_exact):
     phrase_list = phrase_to_list(phrase[0])
     l = len(phrase_list)
@@ -172,7 +182,7 @@ for i in range(len(appear_exact)):
     cairo_wrapper += f"    assert out_exact{i} = ARR_exact_count{i}\n"
 cairo_wrapper += "\n"
 
-# now we write the outputs
+# now we print the outputs 
 for i in range(len(appear_at_least_once)):
     cairo_wrapper += f"    serialize_word(out_once{i})\n"
 for i in range(len(do_not_appear)):
