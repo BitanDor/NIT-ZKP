@@ -1,6 +1,14 @@
 # NIT-ZKP
 
-This repository contains the materials used and tools developed working on the paper **Using Zero-Knowledge to Reconcile Law Enforcement Secrecy and Fair Trial Rights in Criminal Cases** by _Dor Bitan, Ran Canetti, Shafi Goldwasser, and Rebecca Wexler_. [(link to pre-print version)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4074315).
+This repository contains the materials used and tools developed working on the paper 
+
+**Using Zero-Knowledge to Reconcile Law Enforcement Secrecy and Fair Trial Rights in Criminal Cases** 
+
+by 
+
+_Dor Bitan, Ran Canetti, Shafi Goldwasser, and Rebecca Wexler_.
+
+[(link to pre-print version)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4074315).
 
 
 ## Repository contents
