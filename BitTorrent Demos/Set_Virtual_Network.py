@@ -11,21 +11,22 @@ import os
 import threading
 import socket
 
-
+# This is the number of virtual users we want to wake up. 
 size = 200
 
 operating_system = os.name
 
+# The references should be changed to match your local folders. 
 if operating_system == "posix":
-    users_path = r'/mnt/c/Users/bitan/scripts/code/Virtual_Network/Users/**'
+    users_path = r'/mnt/c/Users/bitan/code/Virtual_Network/Users/**'
 
 if operating_system == "nt":
-    users_path = r'C:\Users\bitan\scripts\code\Virtual_Network\Users\**'
+    users_path = r'C:\Users\bitan\code\Virtual_Network\Users\**'
 
 IPs_paths = glob.glob(users_path)[:size]
 IPs = [os.path.basename(x) for x in IPs_paths]
 
-
+# This function generates the pseudo-random virtual port of a virtual user by its IP address. 
 def ip2port(ip_string):
     number_strings = ip_string.split(".")
     nums = [int(e) for e in number_strings]
@@ -69,8 +70,8 @@ def handle_client(conn, addr, ip, addr_in, user_files_names, path):
 
 def wake_up_user_as_server(port, ip, path):
     '''the function wakes up the user to serve as a server
-    this is a very limited server - it can get only one connection
-    from only one user'''
+    this server can get only one connection
+    from one user'''
     user_files_paths = glob.glob(path+os.sep+r'**')
     user_files_names = [os.path.basename(x) for x in user_files_paths]
     addr = (SERVER, port)
