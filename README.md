@@ -22,7 +22,7 @@ _Dor Bitan, Ran Canetti, Shafi Goldwasser, and Rebecca Wexler_.
 **The initializer** contains a script that processes a text file into a cairo readable format. 
 
 
-**Wrapper auto generation** creates a python code for auto generation of the Cairo-check program from hard-coded black-list and white-list (and count-list). It also contains the template from which the check-program is built. 
+**Wrapper auto generation** contains a python code for auto generation of the Cairo-check program from hard-coded black-list and white-list (and count-list). It also contains the template from which the check-program is built. 
 
 
 **Legal Docs** contains a legal document mentioned in our paper. 
